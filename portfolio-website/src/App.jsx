@@ -4,8 +4,8 @@ import Header from "./components/header";
 import TableOfContents from "./components/tableOfContents";
 import profileImage from "./assets/profile.jpg"; // ✅ Import image correctly
 import DrawingCanvas from "./components/drawingCanvas";
-import FadingCanvas from "./components/Board";
-import BoardComponent from "./components/Board";
+import FadingCanvas from "./components/fading";
+import BoardComponent from "./components/fading";
 
 function App() {
   return (
@@ -54,6 +54,7 @@ function App() {
         </div>
       </section>
 {/* <BoardComponent /> */}
+<FadingCanvas />
       {/* Software Engineering Projects Section */}
       <section id="section2" style={sectionStyle}>
         <h2 style={sectionHeadingStyle}>Software Engineering Projects</h2>
