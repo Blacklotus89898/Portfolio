@@ -5,7 +5,8 @@ import TableOfContents from "./components/tableOfContents";
 import profileImage from "./assets/profile.jpg"; // ✅ Import image correctly
 import DrawingCanvas from "./components/drawingCanvas";
 import FadingCanvas from "./components/fading";
-import BoardComponent from "./components/fading";
+import Ericsson from "./components/ericsson";
+// import BoardComponent from "./components/fading";
 
 function App() {
   return (
@@ -13,11 +14,18 @@ function App() {
       <Header className="header" />
       {/* <div style={{ paddingTop: "100px" }}></div> */}
 
-      {/* <TableOfContents /> */}
+      <TableOfContents />
 
       <section id="section1" style={sectionStyle}>
         <h2 style={sectionHeadingStyle}>About Me</h2>
-        <div style={{ overflow: "auto", display: "flex" }}>
+        <div
+          style={{
+            overflow: "auto",
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <img
             src={profileImage}
             alt="Profile"
@@ -33,9 +41,9 @@ function App() {
               flex: "0 0 200px",
             }}
           />
-          
+
           <div style={{ marginLeft: "30px", flex: "1 0 250px" }}>
-            <h2>Hi all, I'm Steve.</h2>
+            <h2>Hi all, I&apos;m Steve.</h2>
             <ul>
               <li>B.Eng. at McGill University</li>
               <li>Coop Software Engineering Student U3</li>
@@ -53,8 +61,9 @@ function App() {
           </div>
         </div>
       </section>
-{/* <BoardComponent /> */}
-<FadingCanvas />
+      {/* <BoardComponent /> */}
+      <FadingCanvas />
+      <Ericsson />
       {/* Software Engineering Projects Section */}
       <section id="section2" style={sectionStyle}>
         <h2 style={sectionHeadingStyle}>Software Engineering Projects</h2>
@@ -149,12 +158,6 @@ const linkStyle = {
 };
 
 // Adding hover effect for links
-const linkStyleWithHover = {
-  ...linkStyle,
-  ":hover": {
-    textDecoration: "underline",
-    color: "#0056b3", // Slightly darker color for hover effect
-  },
-};
+// Removed unused linkStyleWithHover
 
 export default App;

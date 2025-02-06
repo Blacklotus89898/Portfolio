@@ -44,11 +44,11 @@ const FadingCanvas = () => {
         prevLines
           .map((line) => ({
             ...line,
-            opacity: Math.max(0, line.opacity - 0.01), // Slower fade
+            opacity: Math.max(0, line.opacity - 0.02), // Slower fade
           }))
           .filter((line) => line.opacity > 0) // Remove fully faded lines
       );
-    }, 50); // Adjust for smoother fading
+    }, 20); // Adjust for smoother fading
 
     return () => clearInterval(interval);
   }, []);
@@ -62,7 +62,7 @@ const FadingCanvas = () => {
 
     lines.forEach((line) => {
       context.beginPath();
-      context.arc(line.x, line.y, 3, 0, Math.PI * 2);
+      context.arc(line.x, line.y, 2, 0, Math.PI * 2);
       context.fillStyle = `rgba(255, 0, 0, ${line.opacity})`; // Red fading effect
       context.fill();
     });

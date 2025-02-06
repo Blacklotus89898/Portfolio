@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from "react";
 
 const DrawingCanvas = () => {
   const canvasRef = useRef(null);
@@ -7,8 +7,8 @@ const DrawingCanvas = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-    context.fillStyle = 'black';
+    const context = canvas.getContext("2d");
+    context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
   }, []);
 
@@ -20,22 +20,24 @@ const DrawingCanvas = () => {
   const endDrawing = () => {
     setDrawing(false);
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
+    const context = canvas.getContext("2d");
     context.beginPath();
   };
 
   const draw = (e) => {
     if (!drawing) return;
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-    context.lineWidth = 2;
-    context.lineCap = 'round';
+    const context = canvas.getContext("2d");
+    const rect = canvas.getBoundingClientRect();
+    context.lineWidth = 1;
+    context.lineCap = "round";
     context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 
-    context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    // context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    context.lineTo(e.clientX - rect.left, e.clientY - rect.top);
     context.stroke();
     context.beginPath();
-    context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    context.moveTo(e.clientX - rect.left, e.clientY - rect.top);
 
     setHue((prevHue) => (prevHue + 1) % 360);
   };
@@ -49,24 +51,35 @@ const DrawingCanvas = () => {
 
   const handleReset = () => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-    context.fillStyle = 'black';
+    const context = canvas.getContext("2d");
+    context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
-  }
+  };
 
   return (
     <>
-    <button onClick={handleReset}>Reset</button>
-    <canvas
-      ref={canvasRef}
-      onMouseDown={startDrawing}
-      onMouseUp={endDrawing}
-      onMouseMove={draw}
-      width={500}
-      height={300}
-      style={{ border: '1px solid lightgray', background: 'black' }}
-      />
-      </>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <button onClick={handleReset}>Reset</button>
+          <button onClick={handleReset}>Generate template</button>
+        </div>
+        <canvas
+          ref={canvasRef}
+          onMouseDown={startDrawing}
+          onMouseUp={endDrawing}
+          onMouseMove={draw}
+          width={450}
+          height={300}
+          style={{ border: "1px solid lightgray", background: "black" }}
+        />
+      </div>
+    </>
   );
 };
 
