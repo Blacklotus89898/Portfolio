@@ -1,20 +1,19 @@
-import profileImage from "../assets/ericsson.png";
+import profileImage from "../assets/payfacto.png";
 
-const Ericsson = () => {
+const Payfacto = () => {
   return (
     <section id="section1" style={sectionStyle}>
-      <h2 style={sectionHeadingStyle}>Ericsson SDE Intern - 8 months</h2>
+      <h2 style={sectionHeadingStyle}>Payfacto Fullstack Intern - 4 Months</h2>
       <div
         style={{
           border: "2px solid black",
           display: "flex",
           padding: "20px",
           borderRadius: "8px",
-          flexWrap: "wrap",
         }}
       >
         <a
-          href="https://www.ericsson.com/en"
+          href="https://payfacto.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -22,12 +21,13 @@ const Ericsson = () => {
         </a>
         <ul style={sectionTextStyle}>
           <li>
-            I am working as a Software Developer Intern at Ericsson for 8
-            months.
+            I have been working as a Fullstack Software Developer Intern at
+            Payfacto for 4 months.
           </li>
           <li>
-            I'm currently implementing PoCs for emerging 5 and 6G
-            Telecommunication technology on Ericsson RnD team.
+            This experience has allowed me to work on a variety of projects,
+            including a new feature for the Payfacto Interal Portal using
+            Golang, MySQL and VueJs.
           </li>
         </ul>
       </div>
@@ -35,7 +35,7 @@ const Ericsson = () => {
   );
 };
 
-export default Ericsson;
+export default Payfacto;
 
 const sectionStyle = {
   color: "#333",
@@ -51,7 +51,6 @@ const sectionStyle = {
 const sectionHeadingStyle = {
   fontSize: "24px",
   marginBottom: "10px",
-  paddingLeft: "20px",
   color: "#333",
 };
 
@@ -61,12 +60,11 @@ const sectionTextStyle = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  flexWrap : "wrap",
 };
 
 const imageStyle = {
-  width: "350px",
-  height: "200px",
+  width: "400px",
+  height: "150px",
   float: "left",
   marginRight: "20px",
   marginBottom: "20px",

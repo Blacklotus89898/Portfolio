@@ -15,7 +15,7 @@ const Header = () => {
             alignItems: "center",
           }}
         >
-          <NavLink href="#home" text="Home" />
+          <NavLink href="#section1" text="Home" />
           <span style={{ color: "white" }}>|</span>
           <NavLink href="https://github.com/Blacklotus89898" text="Github" />
           <span style={{ color: "white" }}>|</span>

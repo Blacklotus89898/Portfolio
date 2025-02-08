@@ -12,11 +12,16 @@ const TableOfContents = () => {
         </li>
         <li style={listItemStyle}>
           <a href="#section2" style={linkStyle}>
-            Software Engineering Projects
+            Work Experience
           </a>
         </li>
         <li style={listItemStyle}>
           <a href="#section3" style={linkStyle}>
+            Software Engineering Projects
+          </a>
+        </li>
+        <li style={listItemStyle}>
+          <a href="#section4" style={linkStyle}>
             Personal Projects
           </a>
         </li>

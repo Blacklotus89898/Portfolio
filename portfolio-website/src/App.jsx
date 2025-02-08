@@ -3,9 +3,11 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import TableOfContents from "./components/tableOfContents";
 import profileImage from "./assets/profile.jpg"; // ✅ Import image correctly
+import roboticsImage from "./assets/robotics.png"; // ✅ Import robotics image correctly
 import DrawingCanvas from "./components/drawingCanvas";
 import FadingCanvas from "./components/fading";
 import Ericsson from "./components/ericsson";
+import Payfacto from "./components/payfacto";
 // import BoardComponent from "./components/fading";
 
 function App() {
@@ -13,10 +15,12 @@ function App() {
     <>
       <Header className="header" />
       {/* <div style={{ paddingTop: "100px" }}></div> */}
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <TableOfContents /> 
+        <img src={roboticsImage} alt="Robotics" style={{  }} />
+    </div>
 
-      <TableOfContents />
-
-      <section id="section1" style={sectionStyle}>
+      <section id="section1" style={sectionStyle}>  
         <h2 style={sectionHeadingStyle}>About Me</h2>
         <div
           style={{
@@ -56,16 +60,22 @@ function App() {
           <div
             style={{ clear: "both", border: "1px solid lightgray", flex: 1 }}
           >
-            Leave a creative message below!
+            Unleash your craetivity
             <DrawingCanvas />
           </div>
         </div>
       </section>
-      {/* <BoardComponent /> */}
-      <FadingCanvas />
-      <Ericsson />
-      {/* Software Engineering Projects Section */}
+
+      {/* <FadingCanvas /> */}
+
       <section id="section2" style={sectionStyle}>
+
+      <Ericsson />
+
+      <Payfacto />
+      </section>
+
+      <section id="section3" style={sectionStyle}>
         <h2 style={sectionHeadingStyle}>Software Engineering Projects</h2>
         <ul style={listStyle}>
           <li>
@@ -102,7 +112,7 @@ function App() {
       </section>
 
       {/* Personal Projects Section */}
-      <section id="section3" style={sectionStyle}>
+      <section id="section4" style={sectionStyle}>
         <h2 style={sectionHeadingStyle}>Personal Projects</h2>
         <ul style={listStyle}>
           <li>
@@ -141,9 +151,9 @@ const sectionHeadingStyle = {
   color: "#333",
 };
 
-const sectionTextStyle = {
-  fontSize: "16px",
-};
+// const sectionTextStyle = {
+//   fontSize: "16px",
+// };
 
 const listStyle = {
   listStyleType: "none",

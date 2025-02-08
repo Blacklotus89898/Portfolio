@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const FadingCanvas = () => {
   const canvasRef = useRef(null);
@@ -40,13 +40,14 @@ const FadingCanvas = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setLines((prevLines) =>
-        prevLines
-          .map((line) => ({
-            ...line,
-            opacity: Math.max(0, line.opacity - 0.02), // Slower fade
-          }))
-          .filter((line) => line.opacity > 0) // Remove fully faded lines
+      setLines(
+        (prevLines) =>
+          prevLines
+            .map((line) => ({
+              ...line,
+              opacity: Math.max(0, line.opacity - 0.005), // Slower fade
+            }))
+            .filter((line) => line.opacity > 0) // Remove fully faded lines
       );
     }, 20); // Adjust for smoother fading
 
