@@ -2,12 +2,3 @@ html {
   scroll-behavior: smooth;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: white; /* Adjust as needed */
-  z-index: 1000; /* Ensures it stays above other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for visibility */
-  border: 200px solid red;
-}

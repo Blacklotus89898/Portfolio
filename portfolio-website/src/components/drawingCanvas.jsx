@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import FadingCanvas from "./fading";
 
 const DrawingCanvas = () => {
@@ -58,9 +58,9 @@ const DrawingCanvas = () => {
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 
-  const handleSwitch = () => { 
+  const handleSwitch = () => {
     setStyle(style === "black" ? "white" : "black");
-  }
+  };
 
   return (
     <>
@@ -72,8 +72,32 @@ const DrawingCanvas = () => {
         }}
       >
         <div>
-          <button onClick={handleReset}>Reset</button>
-          <button onClick={handleSwitch}>Switch Canva Style</button>
+          <button
+            onClick={handleReset}
+            style={{
+              // margin: "10px",
+              border: "1px solid black",
+              padding: "10px",
+              // borderRadius: "5px",
+              backgroundColor: "black",
+              color: "white",
+            }}
+          >
+            Reset
+          </button>
+          <button
+            onClick={handleSwitch}
+            style={{
+              // margin: "10px",
+              padding: "10px",
+              border: "1px solid black",
+              // borderRadius: "5px",
+              backgroundColor: "white",
+              color: "black",
+            }}
+          >
+            Switch Canva Style
+          </button>
         </div>
         {style === "black" ? (
           <canvas
@@ -84,10 +108,10 @@ const DrawingCanvas = () => {
             width={450}
             height={300}
             style={{ border: "1px solid lightgray", background: "black" }}
-          />) : (
-            <FadingCanvas></FadingCanvas>
-          )
-          }
+          />
+        ) : (
+          <FadingCanvas></FadingCanvas>
+        )}
       </div>
     </>
   );

@@ -3,132 +3,152 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import TableOfContents from "./components/tableOfContents";
 import profileImage from "./assets/profile.jpg"; // ✅ Import image correctly
-import roboticsImage from "./assets/robotics.png"; // ✅ Import robotics image correctly
+// import roboticsImage from "./assets/robotics.png"; // ✅ Import robotics image correctly
 import DrawingCanvas from "./components/drawingCanvas";
-import FadingCanvas from "./components/fading";
 import Ericsson from "./components/ericsson";
 import Payfacto from "./components/payfacto";
-// import BoardComponent from "./components/fading";
+import { useState } from "react";
 
 function App() {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
   return (
     <>
-      <Header className="header" />
-      {/* <div style={{ paddingTop: "100px" }}></div> */}
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <TableOfContents /> 
-        <img src={roboticsImage} alt="Robotics" style={{  }} />
-    </div>
-
-      <section id="section1" style={sectionStyle}>  
-        <h2 style={sectionHeadingStyle}>About Me</h2>
-        <div
-          style={{
-            overflow: "auto",
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <img
-            src={profileImage}
-            alt="Profile"
-            style={{
-              borderRadius: "50%",
-              width: "200px",
-              height: "200px",
-              float: "left",
-              marginRight: "20px",
-              marginBottom: "20px",
-              marginTop: "20px",
-              boxShadow: "0px 8px 8px -4px gray",
-              flex: "0 0 200px",
-            }}
+      <div style={{ display: "flex" }}>
+        {showSidebar && <TableOfContents />}
+        <div>
+          <Header
+            className="header"
+            toggleSidebar={toggleSidebar}
+            showSidebar={showSidebar}
           />
+          {/* <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <img src={roboticsImage} alt="Robotics" style={{ height: "120%" }} />
+    </div> */}
 
-          <div style={{ marginLeft: "30px", flex: "1 0 250px" }}>
-            <h2>Hi all, I&apos;m Steve.</h2>
-            <ul>
-              <li>B.Eng. at McGill University</li>
-              <li>Coop Software Engineering Student U3</li>
-              <li>Robotics and 3D Simulation Enthusiast</li>
-              <li>3D Modeling with Blender Learner</li>
-              <li>Arch Linux Amateur</li>
+          <section id="section1" style={sectionStyle}>
+            <h2 style={sectionHeadingStyle}>About Me</h2>
+            <div
+              style={{
+                overflow: "auto",
+                display: "flex",
+                justifyContent: "space-around",
+                alignContent: "center",
+
+                flexWrap: "wrap",
+              }}
+            >
+              <img
+                src={profileImage}
+                alt="Profile"
+                style={{
+                  borderRadius: "50%",
+                  width: "200px",
+                  height: "200px",
+                  float: "left",
+                  marginRight: "20px",
+                  marginBottom: "20px",
+                  marginTop: "20px",
+                  boxShadow: "0px 8px 8px -4px gray",
+                  flex: "0 0 200px",
+                }}
+              />
+
+              <div style={{ marginLeft: "30px", flex: "1 0 250px" }}>
+                <h2>Hi all, I&apos;m Steve.</h2>
+                <div style={{ textAlign: "left" }}>
+                  <ul>
+                    <li>B.Eng. at McGill University</li>
+                    <li>Coop Software Engineering Student U3</li>
+                    <li>Robotics and 3D Simulation Enthusiast</li>
+                    <li>3D Modeling with Blender Learner</li>
+                    <li>Arch Linux Amateur</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  clear: "both",
+                  // border: "1px solid lightgray",
+                  flex: 1,
+                }}
+              >
+                <h3
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  Unleash Your Creativity
+                </h3>
+                <DrawingCanvas />
+              </div>
+            </div>
+          </section>
+          <section id="section2" style={sectionStyle}>
+            <Ericsson />
+
+            <Payfacto />
+          </section>
+
+          <section id="section3" style={sectionStyle}>
+            <h2 style={sectionHeadingStyle}>Software Engineering Projects</h2>
+            <ul style={listStyle}>
+              <li>
+                Sports Center Management System: React + SpringBoot:
+                <a
+                  href="https://github.com/Blacklotus89898/Sports-Center-Management-System"
+                  style={linkStyle}
+                >
+                  {" "}
+                  Check it out
+                </a>
+              </li>
+              <li>
+                Cash Register, Report and Inventory Management System:
+                <a
+                  href="https://github.com/Blacklotus89898/CashierApp"
+                  style={linkStyle}
+                >
+                  {" "}
+                  Check it out
+                </a>
+              </li>
+              <li>
+                Robotic Club Repo:
+                <a
+                  href="https://github.com/mcgill-robotics/rover"
+                  style={linkStyle}
+                >
+                  {" "}
+                  Check it out
+                </a>
+              </li>
             </ul>
-          </div>
+          </section>
 
-          <div
-            style={{ clear: "both", border: "1px solid lightgray", flex: 1 }}
-          >
-            Unleash your craetivity
-            <DrawingCanvas />
-          </div>
+          {/* Personal Projects Section */}
+          <section id="section4" style={sectionStyle}>
+            <h2 style={sectionHeadingStyle}>Personal Projects</h2>
+            <ul style={listStyle}>
+              <li>
+                ROS Noetic Node Controller Interface:
+                <a
+                  href="https://github.com/Blacklotus89898/MyROS"
+                  style={linkStyle}
+                >
+                  {" "}
+                  Check it out
+                </a>
+              </li>
+            </ul>
+          </section>
         </div>
-      </section>
-
-      {/* <FadingCanvas /> */}
-
-      <section id="section2" style={sectionStyle}>
-
-      <Ericsson />
-
-      <Payfacto />
-      </section>
-
-      <section id="section3" style={sectionStyle}>
-        <h2 style={sectionHeadingStyle}>Software Engineering Projects</h2>
-        <ul style={listStyle}>
-          <li>
-            Sports Center Management System: React + SpringBoot:
-            <a
-              href="https://github.com/Blacklotus89898/Sports-Center-Management-System"
-              style={linkStyle}
-            >
-              {" "}
-              Check it out
-            </a>
-          </li>
-          <li>
-            Cash Register, Report and Inventory Management System:
-            <a
-              href="https://github.com/Blacklotus89898/CashierApp"
-              style={linkStyle}
-            >
-              {" "}
-              Check it out
-            </a>
-          </li>
-          <li>
-            Robotic Club Repo:
-            <a
-              href="https://github.com/mcgill-robotics/rover"
-              style={linkStyle}
-            >
-              {" "}
-              Check it out
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      {/* Personal Projects Section */}
-      <section id="section4" style={sectionStyle}>
-        <h2 style={sectionHeadingStyle}>Personal Projects</h2>
-        <ul style={listStyle}>
-          <li>
-            ROS Noetic Node Controller Interface:
-            <a
-              href="https://github.com/Blacklotus89898/MyROS"
-              style={linkStyle}
-            >
-              {" "}
-              Check it out
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      {/* Footer */}
+      </div>
       <Footer />
     </>
   );

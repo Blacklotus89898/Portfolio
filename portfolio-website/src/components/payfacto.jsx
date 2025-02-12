@@ -55,7 +55,7 @@ const sectionHeadingStyle = {
 };
 
 const sectionTextStyle = {
-  fontSize: "18px",
+  fontSize: "14px",
   textAlign: "center",
   display: "flex",
   flexDirection: "column",

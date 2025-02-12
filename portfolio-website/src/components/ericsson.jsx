@@ -9,8 +9,7 @@ const Ericsson = () => {
           border: "2px solid black",
           display: "flex",
           padding: "20px",
-          borderRadius: "8px",
-          flexWrap: "wrap",
+          borderRadius: "8px"
         }}
       >
         <a
@@ -26,7 +25,7 @@ const Ericsson = () => {
             months.
           </li>
           <li>
-            I'm currently implementing PoCs for emerging 5 and 6G
+            I&apos;m currently implementing PoCs for emerging 5 and 6G
             Telecommunication technology on Ericsson RnD team.
           </li>
         </ul>
@@ -56,12 +55,11 @@ const sectionHeadingStyle = {
 };
 
 const sectionTextStyle = {
-  fontSize: "18px",
+  fontSize: "14px",
   textAlign: "center",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  flexWrap : "wrap",
 };
 
 const imageStyle = {

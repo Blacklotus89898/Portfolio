@@ -32,11 +32,11 @@ const TableOfContents = () => {
 
 // Inline styles for the Table of Contents
 const tocStyle = {
-  backgroundColor: '#333',  // Match header and footer background color
+  backgroundColor: 'black',  // Match header and footer background color
   color: '#fff',            // Match header and footer text color
   padding: '20px',
   marginBottom: '20px',
-  borderRadius: '8px',
+  // borderRadius: '20px',
   width: '250px',
 };
 
@@ -45,6 +45,8 @@ const headingStyle = {
   marginBottom: '10px',
   color: '#fff',            // Match header and footer text color
   textAlign: 'center',
+  margingbottom: '40px',
+  
 };
 
 const listStyle = {

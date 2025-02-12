@@ -13,7 +13,7 @@ const FadingCanvas = () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
   }, []);
 
-  const startDrawing = (e) => {
+  const startDrawing = () => {
     setDrawing(true);
   };
 
@@ -76,8 +76,8 @@ const FadingCanvas = () => {
         onMouseDown={startDrawing}
         onMouseUp={endDrawing}
         onMouseMove={draw}
-        width={800}
-        height={400}
+        width={450}
+        height={300}
         style={canvasStyle}
       />
     </div>
@@ -94,7 +94,7 @@ const containerStyle = {
 };
 
 const canvasStyle = {
-  position: "absolute",
+  position: "relative",
   top: 0,
   left: 0,
   background: "transparent",
