@@ -2,46 +2,63 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       <div style={footerContainerStyle}>
+        <span style={footerNote}>
+          Built by Steve Chen · Software Engineering (AI minor), McGill
+          University · Class of 2026
+        </span>
         <nav style={navStyle}>
-          <a href="../../resume.pdf" style={linkStyle}>
-            My Resume
+          <a href="/Steve_Chen.pdf" style={linkStyle}>
+            Resume
           </a>
           <a href="mailto:steve.chen@mail.mcgill.ca" style={linkStyle}>
-            Email Contact
+            Email
           </a>
           <a href="https://github.com/Blacklotus89898" style={linkStyle}>
-            Github Portfolio
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/steve-chen-b08308250" style={linkStyle}>
+            LinkedIn
           </a>
         </nav>
-        <p>&copy; McGill Robotics Rover Division</p>
       </div>
     </footer>
   );
 };
-// Inline styles for the footer
+
 const footerStyle = {
-  backgroundColor: "#333",
-  color: "#fff",
-  padding: "20px 0",
-  bottom: 0,
-  width: "100%",
-  textAlign: "center",
+  borderTop: "1px solid var(--border-subtle)",
+  padding: "1.1rem 1.5rem 1.4rem",
+  marginTop: "auto",
+  backgroundColor: "var(--bg-alt)",
+  transition: "background-color 0.3s ease, border-color 0.3s ease",
 };
 
 const footerContainerStyle = {
-  maxWidth: "1200px",
+  maxWidth: "1120px",
   margin: "0 auto",
-  padding: "0 20px",
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "0.75rem",
+  alignItems: "center",
+  justifyContent: "space-between",
+  fontSize: "0.8rem",
+  color: "var(--muted)",
+};
+
+const footerNote = {
+  opacity: 0.9,
 };
 
 const navStyle = {
-  marginTop: "10px",
+  display: "flex",
+  gap: "0.9rem",
+  flexWrap: "wrap",
 };
 
 const linkStyle = {
-  color: "#fff",
-  margin: "0 15px",
+  color: "var(--text)",
   textDecoration: "none",
+  transition: "color 0.2s ease",
 };
 
 export default Footer;

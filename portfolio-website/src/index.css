@@ -1,0 +1,126 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* McGill Light Theme (Default) */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --accent: #ED1B2F;
+  --accent-soft: rgba(237, 27, 47, 0.1);
+  --accent-strong: #C8102E;
+  --text: #1a1a1a;
+  --muted: #6c757d;
+  --card-bg: #ffffff;
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-border: rgba(0, 0, 0, 0.08);
+}
+
+/* Dark Theme */
+:root.dark {
+  --bg: #0a0a0a;
+  --bg-alt: #141414;
+  --accent: #ED1B2F;
+  --accent-soft: rgba(237, 27, 47, 0.15);
+  --accent-strong: #ff3d52;
+  --text: #e5e5e5;
+  --muted: #9ca3af;
+  --card-bg: rgba(20, 20, 20, 0.8);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --header-bg: rgba(10, 10, 10, 0.95);
+  --header-border: rgba(255, 255, 255, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root:not(.dark) body {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+:root.dark body {
+  background: radial-gradient(120% 160% at 0% 0%, #1a1a1a 0, #0a0a0a 45%, #000 100%),
+    radial-gradient(120% 220% at 100% 0%, #252525 0, #0a0a0a 50%, #000 100%);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Theme toggle button hover effect */
+button[aria-label="Toggle dark mode"]:hover {
+  border-color: var(--accent) !important;
+  background: var(--card-bg) !important;
+  transform: scale(1.05);
+}
+
+/* Header navigation link hover effects */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link:hover::before {
+  width: calc(100% - 0.5rem);
+}
+
+.nav-link:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+}
+
