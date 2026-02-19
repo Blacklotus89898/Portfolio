@@ -6,23 +6,31 @@ This repository is set up with GitHub Actions to automatically deploy when you p
 
 ### Steps:
 
-1. **Push your code to GitHub:**
+1. **First, commit and push the workflow file:**
    ```bash
    git add .
-   git commit -m "Ready for deployment"
+   git commit -m "Add GitHub Pages deployment workflow"
    git push origin main
    ```
 
 2. **Enable GitHub Pages in repository settings:**
-   - Go to your repository on GitHub
-   - Click **Settings** → **Pages**
-   - Under **Source**, select **GitHub Actions**
+   - Go to: https://github.com/Blacklotus89898/Portfolio/settings/pages
+   - Under **Source**, select **GitHub Actions** (NOT "Static HTML" or "Jekyll")
+   - If you see suggested workflows, you can ignore them - our custom workflow will be used
    - Save
 
-3. **That's it!** After pushing, GitHub Actions will automatically:
-   - Build your site
-   - Deploy it to GitHub Pages
-   - Your site will be available at: `https://yourusername.github.io/Portfolio/`
+3. **Check the Actions tab:**
+   - Go to the **Actions** tab in your repository
+   - You should see "Deploy to GitHub Pages" workflow running
+   - Wait for it to complete (green checkmark)
+
+4. **Your site is live!**
+   - After the workflow completes, your site will be available at:
+   - `https://blacklotus89898.github.io/Portfolio/`
+   - It may take a few minutes for the first deployment
+
+5. **Future updates:**
+   - Just push to `main` branch and it will automatically redeploy!
 
 ## Option 2: Manual Deployment with gh-pages
 
