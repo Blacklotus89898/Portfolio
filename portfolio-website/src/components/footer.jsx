@@ -7,7 +7,7 @@ const Footer = () => {
           University · Class of 2026
         </span>
         <nav style={navStyle}>
-          <a href="/Steve_Chen.pdf" style={linkStyle}>
+          <a href={`${import.meta.env.BASE_URL}Steve_Chen.pdf`} style={linkStyle}>
             Resume
           </a>
           <a href="mailto:steve.chen@mail.mcgill.ca" style={linkStyle}>

@@ -16,7 +16,7 @@ const Hero = () => {
             microservices to real-time streaming data platforms.
           </p>
           <div className="hero-actions">
-            <a href="/Steve_Chen.pdf" className="btn-primary">
+            <a href={`${import.meta.env.BASE_URL}Steve_Chen.pdf`} className="btn-primary">
               Download Resume
             </a>
             <a

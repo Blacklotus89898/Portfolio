@@ -18,7 +18,7 @@ const Header = () => {
         <button onClick={toggleTheme} style={themeToggleStyle} aria-label="Toggle dark mode">
           {isDark ? "☀️" : "🌙"}
         </button>
-        <a href="/Steve_Chen.pdf" style={ctaStyle} className="nav-link">
+        <a href={`${import.meta.env.BASE_URL}Steve_Chen.pdf`} style={ctaStyle} className="nav-link">
           Resume
         </a>
       </nav>
